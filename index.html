@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free online tools for image compression, PDF compression, PDF to Word conversion, PDF merging, and PDF splitting. Optimize your files easily and quickly.">
+  <meta name="keywords" content="image compression, PDF compression, PDF to Word, PDF merger, PDF splitter, online tools">
+  <meta name="author" content="Your Name">
+  <title>Online Tools - Image & PDF Utilities</title>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* General Styles */
+    :root {
+      --primary-color: #2563eb; /* Blue */
+      --secondary-color: #1e40af; /* Dark Blue */
+      --background-color: #f8fafc; /* Light Gray */
+      --text-color: #1e293b; /* Dark Gray */
+      --white: #ffffff;
+      --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: var(--background-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--primary-color);
+      color: var(--white);
+      padding: 2rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    nav ul li a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+
+    nav ul li a:hover {
+      color: #ffdd57; /* Yellow */
+    }
+
+    main {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .tool-card {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .tool-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .tool-card h2 {
+      margin-top: 0;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--primary-color);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .tool-card h2 i {
+      font-size: 1.2rem;
+    }
+
+    .tool-card input[type="file"] {
+      margin: 1rem 0;
+      padding: 0.75rem;
+      border: 2px dashed var(--primary-color);
+      border-radius: 5px;
+      width: 100%;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .tool-card input[type="file"]:hover {
+      background: rgba(37, 99, 235, 0.1);
+    }
+
+    .tool-card select {
+      padding: 0.75rem;
+      border: 1px solid var(--primary-color);
+      border-radius: 5px;
+      margin: 1rem 0;
+      width: 100%;
+      cursor: pointer;
+    }
+
+    .tool-card button {
+      padding: 0.75rem 1.5rem;
+      background: var(--primary-color);
+      color: var(--white);
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+
+    .tool-card button:hover {
+      background: var(--secondary-color);
+    }
+
+    .ad-space {
+      margin: 2rem 0;
+      text-align: center;
+    }
+
+    footer {
+      background: var(--primary-color);
+      color: var(--white);
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .tools-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=YOUR_ADSENSE_ID" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <h1>Online Tools</h1>
+    <nav>
+      <ul>
+        <li><a href="#image-compression"><i class="fas fa-image"></i> Image Compression</a></li>
+        <li><a href="#pdf-compression"><i class="fas fa-file-pdf"></i> PDF Compression</a></li>
+        <li><a href="#pdf-to-word"><i class="fas fa-file-word"></i> PDF to Word</a></li>
+        <li><a href="#pdf-merger"><i class="fas fa-file-archive"></i> PDF Merger</a></li>
+        <li><a href="#pdf-splitter"><i class="fas fa-file-export"></i> PDF Splitter</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="tools-grid">
+      <!-- Image Compression Tool -->
+      <div class="tool-card" id="image-compression">
+        <h2><i class="fas fa-image"></i> Image Compression</h2>
+        <input type="file" id="image-input" accept="image/*">
+        <select id="compression-level">
+          <option value="0.1">Low Compression</option>
+          <option value="0.5">Medium Compression</option>
+          <option value="0.9">High Compression</option>
+        </select>
+        <button id="compress-btn">Compress Image</button>
+        <div id="compressed-image-container"></div>
+      </div>
+
+      <!-- PDF Compression Tool -->
+      <div class="tool-card" id="pdf-compression">
+        <h2><i class="fas fa-file-pdf"></i> PDF Compression</h2>
+        <input type="file" id="pdf-input" accept="application/pdf">
+        <button id="compress-pdf-btn">Compress PDF</button>
+      </div>
+
+      <!-- PDF to Word Tool -->
+      <div class="tool-card" id="pdf-to-word">
+        <h2><i class="fas fa-file-word"></i> PDF to Word</h2>
+        <input type="file" id="pdf-to-word-input" accept="application/pdf">
+        <button id="convert-pdf-to-word-btn">Convert to Word</button>
+      </div>
+
+      <!-- PDF Merger Tool -->
+      <div class="tool-card" id="pdf-merger">
+        <h2><i class="fas fa-file-archive"></i> PDF Merger</h2>
+        <input type="file" id="pdf-merger-input" accept="application/pdf" multiple>
+        <button id="merge-pdf-btn">Merge PDFs</button>
+      </div>
+
+      <!-- PDF Splitter Tool -->
+      <div class="tool-card" id="pdf-splitter">
+        <h2><i class="fas fa-file-export"></i> PDF Splitter</h2>
+        <input type="file" id="pdf-splitter-input" accept="application/pdf">
+        <button id="split-pdf-btn">Split PDF</button>
+      </div>
+    </div>
+
+    <!-- Ad Spaces -->
+    <div class="ad-space">
+      <h3>Advertisement</h3>
+      <!-- Google AdSense Ad Unit -->
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="YOUR_ADSENSE_ID"
+           data-ad-slot="YOUR_AD_SLOT_ID"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Online Tools. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Image Compression
+    document.getElementById('compress-btn').addEventListener('click', function () {
+      const fileInput = document.getElementById('image-input');
+      const compressionLevel = parseFloat(document.getElementById('compression-level').value);
+      const file = fileInput.files[0];
+
+      if (file) {
+        compressImage(file, compressionLevel);
+      }
+    });
+
+    function compressImage(file, quality) {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+
+      reader.onload = function (event) {
+        const img = new Image();
+        img.src = event.target.result;
+
+        img.onload = function () {
+          const canvas = document.createElement('canvas');
+          const ctx = canvas.getContext('2d');
+          canvas.width = img.width;
+          canvas.height = img.height;
+          ctx.drawImage(img, 0, 0);
+
+          const compressedImage = canvas.toDataURL('image/jpeg', quality);
+          const compressedImageContainer = document.getElementById('compressed-image-container');
+          compressedImageContainer.innerHTML = `<img src="${compressedImage}" alt="Compressed Image" style="max-width: 100%; margin-top: 20px;">`;
+        };
+      };
+    }
+
+    // PDF Compression (Placeholder)
+    document.getElementById('compress-pdf-btn').addEventListener('click', function () {
+      alert('PDF Compression functionality will be implemented in the backend.');
+    });
+
+    // PDF to Word (Placeholder)
+    document.getElementById('convert-pdf-to-word-btn').addEventListener('click', function () {
+      alert('PDF to Word functionality will be implemented in the backend.');
+    });
+
+    // PDF Merger (Placeholder)
+    document.getElementById('merge-pdf-btn').addEventListener('click', function () {
+      alert('PDF Merger functionality will be implemented in the backend.');
+    });
+
+    // PDF Splitter (Placeholder)
+    document.getElementById('split-pdf-btn').addEventListener('click', function () {
+      alert('PDF Splitter functionality will be implemented in the backend.');
+    });
+  </script>
+</body>
+</html>
